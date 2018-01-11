@@ -41,6 +41,7 @@ if !get(g:, 'ctrlp_yankring_disable', 0)
     else
       autocmd CursorMoved * call yankring#collect()
     endif
+    autocmd TextYankPost * call yankring#collect()
     autocmd VimLeavePre * call yankring#store()
   augroup END
 endif
